@@ -1,0 +1,32 @@
+{% extends 'app_celebration_mode/base2.html' %}
+
+{% load static %}
+
+{% block body_block %}
+<div style="height: 9rem;">
+
+</div>
+<div class="row">
+    <div class="col-sm-12 col-xl-4">
+
+    </div>
+    <div class="col-sm-12 col-xl-4">
+        <div class="text-center border border-light rounded p-4" style="backdrop-filter: blur(5px);background-color: rgba(255, 255, 255, 0.253);">
+            <label class="fw-light fs-2 text-light" for="here">Login</label>
+            <p></p>
+            <form action="{% url 'userlogin' %}" method="POST">
+                {% csrf_token %}
+                <input id="here" name="signin_username" class="text-center" type="text" value="admin"><br><p></p>
+                <input name="signin_password" class="text-center" type="password" value="admin"><br><p></p>
+                <p></p>
+                <input class="btn btn-outline-primary" type="submit">
+            </form>
+        </div>
+    </div>
+    <div class="col-sm-12 col-xl-4">
+
+    </div>
+</div>
+
+
+{% endblock %}

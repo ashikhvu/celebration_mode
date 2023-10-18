@@ -15,65 +15,102 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
-
+<style>
+    #navbar_{
+        height: 11rem;
+        transition: all 0.2s linear;
+    }
+    #my_check:checked~#navbar_{
+        height: 6rem;    
+        transition: all 0.2s linear;
+    }
+    #visiblity_dropdown{
+        visibility: visible;
+    }
+    /* #my_check:checked + #visiblity_dropdown{
+        visibility: hidden;
+        transition: all 0.2s linear;
+    } */
+    #my_check{
+        display: hidden;
+    }
+    @media (min-width:600px)
+    {
+        #my_check{
+            display: block;
+        }
+    }
+</style>
 <body>
-    <div class="position-relative" style="z-index: 10;">
-        <div id="wire_sm" style="margin-top: 2rem;" class="position-absolute start-0 top-0">
-            <ul id="wire">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+    <nav class="navbar navbar-expand-lg bg-light p-2 sticky-top ts_sm_light bs_md">
+        <div class="container-fluid">
+            <div class="position-realtive">
+                <div class="position-absolute start-0 top-0" style="margin-left: 0.3rem;margin-top: 0.28rem;">
+                    <img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} class="img_xmas" src="{% static 'images/icons/hat.png' %}" alt="">
+                </div>
+            </div>
+          <a class="navbar-brand me-auto" href="#">EventMode</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"><span><img style="width: 18px;padding-bottom: 5px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/house_default1.png' %}" {% else %} src="{% static 'images/icons/house.png' %}" {% endif %} alt=""></span> Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about_"><span><img style="width: 18px;padding-bottom: 5px;"{% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/about_default4.png' %}" {% else %} src="{% static 'images/icons/candy-canes.png' %}" {% endif %}  alt=""></span> About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services_"><span><img style="width: 18px;padding-bottom: 5px;"{% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/service_default8.png' %}" {% else %} src="{% static 'images/icons/tree.png' %}" {% endif %}  alt=""></span> Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'signin_page' %}"><span><img style="width: 18px;padding-bottom: 5px;"{% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/signin_default3.png' %}" {% else %} src="{% static 'images/icons/snow-globe.png' %}" {% endif %}  alt=""></span> Signin</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact_"><span><img style="width: 18px;padding-bottom: 5px;"{% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/contacts_default2.png' %}" {% else %} src="{% static 'images/icons/letter.png' %}" {% endif %} alt=""></span> Contacts</a>
+              </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'admin_page' %}"><span><img style="width: 18px;padding-bottom: 5px;"{% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/admin_default2.png' %}" {% else %} src="{% static 'images/icons/bisket.png' %}" {% endif %} alt=""></span> Admin</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout_page' %}"><span><img style="width: 18px;padding-bottom: 5px;"{% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/logout_default1.png' %}" {% else %}  src="{% static 'images/icons/penguin.png' %}"  {% endif %} alt=""></span> Logout</a>
+              </li>
+              {% else %}
+              {% endif %}
+              <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li> -->
             </ul>
+            <!-- <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+          </div>
         </div>
-    </div>
-    <nav class="m-0 p-0 bg_area sticky-top" style="box-shadow:5px 5px 5px 5px rgba(0, 0, 0, 0.229);background-color: rgb(255, 255, 255);backdrop-filter: blur(2px);">
-        <div class="position-relative">
+      </nav>
+    <!-- <input hidden id="my_check" type="checkbox" name="">
+    <nav id="navbar_" class="m-0 p-0 bg_area sticky-top w-100" style="box-shadow:5px 5px 5px 5px rgba(0, 0, 0, 0.229);background-color: rgba(255, 255, 255, 0);backdrop-filter: blur(2px);">
+        <label for="my_check">
+            <div class="position-reletive" style="z-index:10">
+                <div class="position-absolute end-0 top-0 pt-2 pe-3">
+                    <img draggable="false" width="18px" src="{% static 'images/icons/menu.png' %}" alt="">
+                </div>
+            </div>
+        </label>
+        <div id="Home_" class="position-relative">
             <div style="margin-top: 0.8rem;margin-left: 1rem;" class="position-absolute start-0 top-0">
                 <ul class="ash_menu_brand">
                     <div class="position-realtive">
@@ -82,31 +119,38 @@
                         </div>
                     </div>
                     <li>
-                        <a class="item_style_brand" href="">Event_mode</a>
+                        <a class="item_style_brand fs-5" href="">Event_mode</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <div>
-            <ul id="dropdown-toggle" class="ash_menu row m-0">
-                <li style="visibility: hidden;" class="menu_item col-sm-12 col-xl-1">
+        <div id="visiblity_dropdown">
+            <ul id="dropdown-toggle" class="ash_menu my_gird m-0">
+                <li style="visibility: hidden;" class="menu_item ">
                     <a class="item_style" href=""> invisible</a>
                 </li>
-                <li class="menu_item col-sm-12 col-xl-1">
-                    <a class="item_style" href="#Home_"><span><img style="width: 15px;padding-bottom: 5px;" src="{% static 'images/icons/house.png' %}" alt=""></span> Home</a>
+                <li class="menu_item ">
+                    <a class="item_style fs-5" href="#home_"><span><img style="width: 15px;padding-bottom: 5px;" src="{% static 'images/icons/house.png' %}" alt=""></span> Home</a>
                 </li>
-                <li class="menu_item col-sm-12 col-xl-1">
-                    <a class="item_style" href="#about_"><span><img style="width: 15px;padding-bottom: 5px;" src="{% static 'images/icons/candy-canes.png' %}" alt=""></span> About</a>
+                <li class="menu_item ">
+                    <a class="item_style fs-5" href="#about_"><span><img style="width: 15px;padding-bottom: 5px;" src="{% static 'images/icons/candy-canes.png' %}" alt=""></span> About</a>
                 </li>
-                <li class="menu_item col-sm-12 col-xl-1">
-                    <a class="item_style" href="#contact_"><span><img style="width: 15px;padding-bottom: 5px;" src="{% static 'images/icons/letter.png' %}" alt=""></span> Contacts</a>
+                <li class="menu_item ">
+                    <a class="item_style fs-5" href="#contact_"><span><img style="height: 20px; width: 10px;padding-bottom: 5px;" src="{% static 'images/icons/letter.png' %}" alt=""></span> Contact</a>
                 </li>
-                <li class="menu_item col-sm-12 col-xl-1">
-                    <a id="theme_switch" class="item_style" href=""><span><img style="width: 15px;padding-bottom: 5px;" src="{% static 'images/icons/snow.png' %}" alt=""></span> Themes</a>
+                <li class="menu_item ">
+                    <a id="theme_switch" class="item_style fs-5" href=""><span><img style="width: 15px;padding-bottom: 5px;" src="{% static 'images/icons/snow.png' %}" alt=""></span> Themes</a>
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav> -->
+    <div class="position-relative" style="z-index: 10;">
+        <div id="wire_sm" style="margin-top: -1.3rem;" class="position-absolute start-0 top-0">
+            <ul  {% if current_theme.theme_name.id == 2 %} style="display: none;" {% endif %} class="wire">
+                
+            </ul>
+        </div>
+    </div>
     <hr style="line-height: 0;margin: 0;padding: 0;">
     <hr style="line-height: 0;margin: 0;padding: 2px;">
     <div class="container-fluid">
@@ -116,6 +160,20 @@
 
 
     <script src="{% static 'js/scripts.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+            $('#my_check').on('click',function(){
+                if($('#my_check').prop('checked'))
+                {
+                    // alert('checked')
+                    $('#visiblity_dropdown').hide()
+                }
+                else{
+                    // alert('not checked')
+                    $('#visiblity_dropdown').show()
+                }
+            })
+        })
+    </script>
 </body>
-
 </html>

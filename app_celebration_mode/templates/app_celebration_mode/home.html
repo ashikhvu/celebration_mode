@@ -9,7 +9,7 @@
 
 <div>
     <!-- home page start -->
-    <div id="Home_" class="carousel slide">
+    <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="card text-bg-dark" style="border-radius:0;border: none;">
@@ -19,15 +19,23 @@
                         <div>
                             <div>
                                 <div class="row">
-                                    <div class="col-xl-3 col-sm-12"></div>
+                                    <div class="col-xl-3 col-sm-12 text-end">
+                                        <img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} width="60%" src="{% static 'images/users/xmaspap1.png' %}" alt="">
+                                    </div>
                                     <div class="col-xl-6 col-sm-12 decor_card bs_bg">
-                                        <h5 class="card-title">Home page description1</h5>
-                                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                            Aperiam ipsum voluptatum totam? Quisquam odit error est at molestiae dolorum
-                                            sequi ullam nulla, eveniet, neque esse amet, cumque asperiores cum nisi.</p>
-
-                                        <p></p>
-                                        <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                                        <div class="position-relative">
+                                            <div class="position-absolute end-0 top-0" style="margin-top: -1.1rem;margin-right: -1.7rem;">
+                                                <img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} class="p-0 m-0" width="100vw" src="/static/images/decor/ribbon1.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <p></p>
+                                            <h5 class="card-title">Welcome to [EventMode] - Your IT Solutions Partner</h5>
+                                            <p></p>
+                                            <p class="card-text">With a passion for cutting-edge technology and a commitment to excellence, we're here to empower your digital journey.</p>
+                                            <p></p>
+                                            <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                                        </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-12"></div>
                                 </div>
@@ -44,12 +52,19 @@
                         <div>
                             <div>
                                 <div class="row">
-                                    <div class="col-xl-3 col-sm-12"></div>
+                                    <div class="col-xl-3 col-sm-12 text-end">
+                                        <img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %}  width="60%" src="{% static 'images/users/xmaspap1.png' %}" alt="">
+                                    </div>
                                     <div class="col-xl-6 col-sm-12 decor_card bs_bg">
-                                        <h5 class="card-title">Home page description1</h5>
-                                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                            Aperiam ipsum voluptatum totam? Quisquam odit error est at molestiae dolorum
-                                            sequi ullam nulla, eveniet, neque esse amet, cumque asperiores cum nisi.</p>
+                                        <div class="position-relative">
+                                            <div class="position-absolute end-0 top-0" style="margin-top: -1.1rem;margin-right: -1.7rem;">
+                                                <img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} class="p-0 m-0" width="100vw" src="/static/images/decor/ribbon1.png" alt="">
+                                            </div>
+                                        </div>
+                                        <p></p>
+                                        <h5 class="card-title">Unleash the Power of Technology</h5>
+                                        <p></p>
+                                        <p class="card-text">We're here to guide you through the vast landscape of IT services, from bespoke software development to network infrastructure solutions.</p>
 
                                         <p></p>
                                         <p class="card-text"><small>Last updated 3 mins ago</small></p>
@@ -69,12 +84,19 @@
                         <div>
                             <div>
                                 <div class="row">
-                                    <div class="col-xl-3 col-sm-12"></div>
+                                    <div class="col-xl-3 col-sm-12 text-end">
+                                        <img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %}  width="60%" src="{% static 'images/users/xmaspap1.png' %}" alt="">
+                                    </div>
                                     <div class="col-xl-6 col-sm-12 decor_card bs_bg">
-                                        <h5 class="card-title">Home page description1</h5>
-                                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                            Aperiam ipsum voluptatum totam? Quisquam odit error est at molestiae dolorum
-                                            sequi ullam nulla, eveniet, neque esse amet, cumque asperiores cum nisi.</p>
+                                        <div class="position-relative">
+                                            <div class="position-absolute end-0 top-0" style="margin-top: -1.1rem;margin-right: -1.7rem;">
+                                                <img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} class="p-0 m-0" width="100vw" src="/static/images/decor/ribbon1.png" alt="">
+                                            </div>
+                                        </div>
+                                        <p></p>
+                                        <h5 class="card-title">Meet Our Expert Team</h5>
+                                        <p></p>
+                                        <p class="card-text">Our team of IT experts is not just highly skilled; they're obsessed with what they do. We live and breathe technology.</p>
 
                                         <p></p>
                                         <p class="card-text"><small>Last updated 3 mins ago</small></p>
@@ -87,11 +109,11 @@
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#Home_" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#Home_" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -101,170 +123,402 @@
     <p class="p-0 m-2"></p>
 
     <!-- about page start -->
+    <!-- lights start -->
     <div class="position-relative" style="z-index: 10;">
         <div id="wire_sm" style="margin-top: 3.8rem;" class="position-absolute start-0 top-0">
-            <ul id="wire">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+            <ul {% if current_theme.theme_name.id == 2 %} style="display: none;" {% endif %} class="wire">
+
             </ul>
         </div>
     </div>
-    <div id="about_" class="">
-        <div class="bs_md bg-white">
+    <!-- lights ends -->
+    <div id="about_" class="w-100">
+        <div class="bg-white">
             <h1 class="fw-light text-center p-3">About Us</h1>
         </div>
-        <div class="row text-center p-3 bg-light">
-            <div class="col-sm-12 col-xl-5">
-                <img style="border-radius: 5px;" width="40%" src="{% static 'images/users/michael-dam-mEZ3PoFGs_k-unsplash.jpg' %}" alt="">
+        <div style="background-color: rgb(255, 255, 255);" class="row text-center p-3 bg- m-0">
+            <div class="col-sm-12 col-xl-4 border">
+                <div class="justify-content-center" style="display: flex;align-items: center;height: 100%;">
+                    <div class="position-reletive">
+                        <div style="margin-top: -7rem;" class="position-absolute">
+                            <img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} width="201vw"  src="{% static 'images/decor/light2.png' %}" alt="">
+                        </div>
+                    </div>
+                    <img style="border-radius: 5px;" width="200vw"
+                        src="{% static 'images/users/michael-dam-mEZ3PoFGs_k-unsplash.jpg' %}" alt="">
+                </div>
             </div>
-            <div class="col-sm-12 col-xl-5">
+            <div class="col-sm-12 col-xl-5 border">
                 <br>
                 <h3 class="fw-light text-center">About Us</h3>
-                <br><br>
+                <br>
                 <div style="display:flex;border:1px sloid black">
-                <div style="align-items: center;">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ea excepturi dolorum voluptate, unde consequuntur laboriosam magni quae doloribus ab incidunt aperiam quia eius maxime facilis iste laborum saepe voluptas</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ea excepturi dolorum voluptate, unde consequuntur laboriosam magni quae doloribus ab incidunt aperiam quia eius maxime facilis iste laborum saepe voluptas</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ea excepturi dolorum voluptate, unde consequuntur laboriosam magni quae doloribus ab incidunt aperiam quia eius maxime facilis iste laborum saepe voluptas</p>
-                </div>
+                    <div style="align-items: center;">
+                        <p class="text-start">At [Event_mode], we're not just in the business of technology; we're in
+                            the business of helping you shape a brighter, more connected future. We are your trusted
+                            companions on the journey through the ever-evolving landscape of IT solutions.</p>
+                        <p class="text-start">As technology enthusiasts and problem solvers, we thrive on turning
+                            complexity into simplicity. We've made it our mission to translate the intricate world of IT
+                            into user-friendly solutions, providing you with the tools and knowledge to excel in the
+                            digital age.</p>
+                        <p class="text-start">We offer a wide range of solutions, from cloud computing and cybersecurity
+                            to cutting-edge software and digital transformation strategies. Together, we'll navigate the
+                            digital realm, harness the power of technology, and drive your success.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-xl-2"></div>
+            <div class="col-sm-12 col-xl-3 border">
+                <div class="justify-content-center" style="display: flex;align-items: center;height: 100%;">
+                    <img {% if current_theme.theme_name.id == 2 %} style="display: none;" {% endif %} width="80%" src="{% static 'images/decor/xmas_papa.gif' %}" alt="no image">
+                </div>
+            </div>
         </div>
     </div>
     <!-- about page ends -->
 
     <p class="p-0 m-2"></p>
-    
-    <!-- contact page start -->
+
+    <!-- service page start -->
+    <!-- lights start -->
     <div class="position-relative" style="z-index: 10;">
-        <div id="wire_sm" style="margin-top:2.8rem;" class="position-absolute start-0 top-0">
-            <ul id="wire">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+        <div id="wire_sm" style="margin-top:3rem;" class="position-absolute start-0 top-0"  {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %}>
+            <ul {% if current_theme.theme_name.id == 2 %} style="display: none;" {% endif %} class="wire">
+
             </ul>
         </div>
     </div>
+    <!-- lights ends -->
     <div>
-        <div id="contact_" class="bs_md">
-            <h3 class="text-center fw-light p-3 bg-light bs_md">Contact Us</h3>
+        <div id="services_" class="">
+            <h1 class="text-center fw-light p-3 bg-light ">Services</h1>
         </div>
     </div>
-    <div id="about_" class="">
-        <div class="row text-center p-3 bg-light">
-            <div class="col-sm-12 col-xl-2"></div>
-            <div class="col-sm-12 col-xl-5">
-                <br>    
-                <h3 class="fw-light text-center">Contact Us</h3>
-                <br><br>
-                <div style="display:flex;border:1px sloid black">
-                <div style="align-items: center;">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ea excepturi dolorum voluptate, unde consequuntur laboriosam magni quae doloribus ab incidunt aperiam quia eius maxime facilis iste laborum saepe voluptas</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ea excepturi dolorum voluptate, unde consequuntur laboriosam magni quae doloribus ab incidunt aperiam quia eius maxime facilis iste laborum saepe voluptas</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ea excepturi dolorum voluptate, unde consequuntur laboriosam magni quae doloribus ab incidunt aperiam quia eius maxime facilis iste laborum saepe voluptas</p>
-                </div>
+    <div class="">
+        <div style="background-color: rgba(0, 0, 0, 0);" class="row text-center p-3 mx-auto me-0">
+            <div class="col-sm-12 col-xl-4 p-3"  style="z-index: 10;">
+                <div class="card">
+                    <!-- <div class="position-reletive">
+                        <div style="margin-top: -1vw;margin-left: 12vw;" class="position-absolute">
+                            
+                        </div>
+                    </div> -->
+                    <div class="card-header">
+                        Featured
+                        <div class="position-relative">
+                            <div style="margin-top: -2.5rem;margin-right: -2rem;" class="position-absolute end-0">
+                                <span><img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">  
+                        <h5 class="card-title">Responsive Design</h5>
+                        <p class="card-text">Busing is supper responsive & work perfectly in all devices.</p>
+                        <a href="#" class="btn btn-danger w-100">More</a>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-xl-3">
-                <img style="border-radius: 5px;" width="200vw" src="{% static 'images/users/michael-dam-mEZ3PoFGs_k-unsplash.jpg' %}" alt="">
+            <div class="col-sm-12 col-xl-4 p-3">
+                <div class="card">
+                    <div class="card-header">
+                        Featured
+                        <div class="position-relative">
+                            <div style="margin-top: -2.5rem;margin-right: -2rem;" class="position-absolute end-0">
+                                <span><img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">User Friendly</h5>
+                        <p class="card-text">Busing easy to use for any technical & nontechnical People.
+
+                        </p>
+                        <a href="#" class="btn btn-danger w-100">More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xl-4 mx-auto p-3">
+                <div class="card">
+                    <div class="card-header">
+                        Featured
+                        <div class="position-relative">
+                            <div style="margin-top: -2.5rem;margin-right: -2rem;" class="position-absolute end-0">
+                                <span><img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Creative Design
+                        </h5>
+                        <p class="card-text">It comes with creative and also smart design layout to you.</p>
+                        <a href="#" class="btn btn-danger w-100">More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xl-4 p-3">
+                <div class="card">
+                    <div class="card-header">
+                        Featured
+                        <div class="position-relative">
+                            <div style="margin-top: -2.5rem;margin-right: -2rem;" class="position-absolute end-0">
+                                <span><img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Icon Font
+                        </h5>
+                        <p class="card-text">It comes with most popular Awesome and stylish Fonts.
+
+                        </p>
+                        <a href="#" class="btn btn-danger w-100">More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xl-4 p-3">
+                <div class="card">
+                    <div class="card-header">
+                        Featured
+                        <div class="position-relative">
+                            <div style="margin-top: -2.5rem;margin-right: -2rem;" class="position-absolute end-0">
+                                <span><img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Google Font
+                        </h5>
+                        <p class="card-text">600 Google Fonts. You can change element fonts easily.
+
+                        </p>
+                        <a href="#" class="btn btn-danger w-100">More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xl-4 p-3 mx-auto">
+                <div class="card">
+                    <div class="card-header">
+                        Featured
+                        <div class="position-relative">
+                            <div style="margin-top: -2.5rem;margin-right: -2rem;" class="position-absolute end-0">
+                                <span><img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Ajax Contact Form
+                        </h5>
+                        <p class="card-text">It comes with ajax contact form messaging will be quicker.</p>
+                        <a href="#" class="btn btn-danger w-100">More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xl-4 p-3">
+                <div class="card">
+                    <div class="card-header">
+                        Featured
+                        <div class="position-relative">
+                            <div style="margin-top: -2.5rem;margin-right: -2rem;" class="position-absolute end-0">
+                                <span><img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Clean Markup
+                        </h5>
+                        <p class="card-text">We developed it followed by W3C Markup.
+
+                        </p>
+                        <a href="#" class="btn btn-danger w-100">More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xl-4 p-3">
+                <div class="card">
+                    <div class="card-header">
+                        Featured
+                        <div class="position-relative">
+                            <div style="margin-top: -2.5rem;margin-right: -2rem;" class="position-absolute end-0">
+                                <span><img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Free Updates
+                        </h5>
+                        <p class="card-text">Purchase once & get life-time free updates.
+
+                        </p>
+                        <a href="#" class="btn btn-danger w-100">More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-xl-4 p-3 mx-auto">
+                <div class="card">
+                    <div class="card-header">
+                        Featured
+                        <div class="position-relative">
+                            <div style="margin-top: -2.5rem;margin-right: -2rem;" class="position-absolute end-0">
+                                <span><img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Real Support
+                        </h5>
+                        <p class="card-text">We provide 7days/week support.
+
+                        </p>
+                        <a href="#" class="btn btn-danger w-100">More</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- contact page start -->
+    <!-- service page start -->
+
+    <p class="p-0 m-2"></p>
+
+    <!-- contact us starts -->
+
+    <div class="position-relative" style="z-index: 10;">
+        <div id="wire_sm" style="margin-top:2.8rem;" class="position-absolute start-0 top-0" >
+            <ul  {% if current_theme.theme_name.id == 2 %} style="display: none;" {% endif %} class="wire">
+
+            </ul>
+        </div>
+    </div>
+  <hr style="line-height:0;padding:0;margin:0">
+  <div id="contact_" class="fw-light">
+  <div style="background-color: rgb(255, 255, 255);box-shadow:  0 0 5px rgba(0, 0, 0, 0.965);" class=" p-3 bg-gradient">
+  <h3 class="text-center fw-light">CONTACT US</h3>
+  </div>
+  <hr  style="line-height:0;padding:0;margin:0">
+  <p class="p-0 m-2"></p>
+   <div id="contactus_body_" style="opacity: 0.7; background-image:linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)) ,url('/static/images/bg/bg4_dark.jpg');background-size: cover;background-repeat: no-repeat; border: 1px solid black;">
+    <br>
+    <div class="row me-0">
+
+      <div class="col-sm-12 col-md-1 mt-3"></div>
+
+      <div class="col-sm-12 col-md-4 mt-3">
+        <h4 class="text-light ps-2">Services</h4>
+        <br>
+        <div class="row">
+          <div class="col">
+            <div class="d-flex">
+              <img class="ms-2" style="width: 30px;height: 30px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/service_default7.png' %}" {% else %} src="{% static 'images/icons/giftbox1.png' %}" {% endif %} alt="">
+            <strong class="text-light fw-bold ms-3 me-3">Responsive Design
+            </strong>
+          </div><br>
+    
+          <div class="d-flex">
+              <img class="ms-2" style="width: 30px;height: 30px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/service_default7.png' %}" {% else %} src="{% static 'images/icons/giftbox1.png' %}" {% endif %}  src="{% static 'images/icons/giftbox1.png' %}" alt="">
+            <strong class="text-light fw-bold ms-3 me-3">User Friendly
+            </strong>
+            </div><br>
+    
+            <div class="d-flex">
+              <img class="ms-2" style="width: 30px;height: 30px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/service_default7.png' %}" {% else %} src="{% static 'images/icons/giftbox1.png' %}" {% endif %} alt="">
+            <strong class="text-light fw-bold ms-3 me-3">Icon Font
+
+            </strong>
+          </div><br>
+    
+          <div class="d-flex">
+              <img class="ms-2" style="width: 30px;height: 30px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/service_default7.png' %}" {% else %} src="{% static 'images/icons/giftbox1.png' %}" {% endif %} alt="">
+            <strong class="text-light fw-bold ms-3 me-3">Google Font
+            </strong>
+            </div><br>
+    
+            <div class="d-flex">
+              <img class="ms-2" style="width: 30px;height: 30px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/service_default7.png' %}" {% else %} src="{% static 'images/icons/giftbox1.png' %}" {% endif %} alt="">
+            <strong class="text-light fw-bold ms-3 me-3">Ajax Contact Form
+            </strong>
+          </div><br>
+        </div>
+        <div class="col">
+          <div class="d-flex">
+              <img class="ms-2" style="width: 30px;height: 30px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/service_default7.png' %}" {% else %} src="{% static 'images/icons/giftbox1.png' %}" {% endif %} alt="">
+            <strong class="text-light fw-bold ms-3 me-3">Clean Markup
+            </strong>
+            </div><br>
+    
+            <div class="d-flex">
+              <img class="ms-2" style="width: 30px;height: 30px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/service_default7.png' %}" {% else %} src="{% static 'images/icons/giftbox1.png' %}" {% endif %} alt="">
+            <strong class="text-light fw-bold ms-3 me-3">Free Updates
+            </strong>
+          </div><br>
+    
+          <div class="d-flex">
+              <img class="ms-2" style="width: 30px;height: 30px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/service_default7.png' %}" {% else %} src="{% static 'images/icons/giftbox1.png' %}" {% endif %} alt="">
+            <strong class="text-light fw-bold ms-3 me-3">Real Support</strong>
+            </div><br>
+    
+            <div style="opacity: 0;" class="d-flex">
+              <img class="ms-2" style="width: 30px;height: 30px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/service_default7.png' %}" {% else %} src="{% static 'images/icons/giftbox1.png' %}" {% endif %} alt="">
+            <strong class="text-light fw-bold ms-3 me-3">Gasteroden</strong>
+          </div><br>
+    
+          <div style="opacity: 0;" class="d-flex">
+              <img class="ms-2" style="width: 30px;height: 30px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/service_default7.png' %}" {% else %} src="{% static 'images/icons/giftbox1.png' %}" {% endif %} alt="">
+            <strong class="text-light fw-bold ms-3 me-3">ENT</strong>
+            </div><br>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- <div class="col-sm-12 col-md-1 mt-3"></div> -->
+
+      <!-- <div class="col-sm-12 col-md-3 mt-3">
+        <h4 style="text-shadow: 10px 10px 5px 5px blue;" class="text-light ps-2">Hospital hours</h4>
+        <br>
+        <div class="d-flex">
+          <img class="ms-2" style="width: 30px;height: 30px;" src="{% static 'images/icons_svg/clock.png' %}" alt="">
+        <strong class="text-light fw-bold ms-3 me-3 ps-2">Mon-Fri</strong>
+        <p class="text-light">08:00 AM - 08:00 PM</p>
+        </div>
+        <div class="d-flex">
+          <img class="ms-2" style="width: 30px;height: 30px;" src="{% static 'images/icons_svg/clock.png' %}" alt="">
+        <strong class="text-light fw-bold ms-3 me-3 ps-2">Sat</strong>
+        <p class="text-light">08:00 AM - 08:00 PM</p>
+        </div>
+        <div class="d-flex">
+          <img class="ms-2" style="width: 30px;height: 30px;" src="{% static 'images/icons_svg/clock.png' %}" alt="">
+        <strong class="text-light fw-bold ms-3 me-3 ps-2">Sun</strong>
+        <p class="text-light">08:00 AM - 08:00 PM</p>
+        </div>
+      </div> -->
+      
+      <div id="contact_" style="border: 1px solid rgba(255, 255, 255, 0);" class="col-sm-12 col-md-4 text-light mx-auto mt-3">
+        <h4 class="ps-2">Contact info</h1>
+          <br>
+        <div class="d-flex mb-2">
+          <img class="ms-2" style="width: 30px;height: 30px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/location_default3.png' %}" {% else %} src="{% static 'images/icons/location.png' %}" {% endif %} alt="">
+          <p class="ms-3">1st floor, Thapasaya Building, Infopark, Kakanad, Kochi, Kerala 682042</p>
+        </div>
+        <div class="d-flex">
+          <img class="ms-2" style="width: 30px;height: 30px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/phone_default1.png' %}" {% else %} src="{% static 'images/icons/horn.png' %}" {% endif %} alt="">
+          <p class="ms-3">+91 9865854785, +0484 6846565</p>
+        </div><br>
+        <div class="d-flex">
+          <img class="ms-2" style="width: 30px;height: 30px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/email_default2.png' %}" {% else %} src="{% static 'images/icons/letter1.png' %}" {% endif %} alt="">
+          <p class="ms-3">eventmode@gmial.com</p>
+        </div>
+        <br><br>
+        
+      </div>
+      <div class="col-sm-12 col-md-3 ">
+        <h4 class="ps-2 text-light mt-3">Location</h4>
+        <div class="text-center">
+          <iframe style="width: 80%;height: 80%; padding: 1rem;border-radius: 5px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15716.296201890831!2d76.3606986!3d10.0107422!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d9bfaa6db61%3A0xa5df6acfc2d1e5fd!2sALTOS%20Technologies!5e0!3m2!1sen!2sin!4v1697604038391!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+    <br>
+   </div>
+
+<!-- contact us end -->
 </div>
 
 {% endblock %}
