@@ -45,11 +45,11 @@
     <nav class="navbar navbar-expand-lg bg-light p-2 sticky-top ts_sm_light bs_md">
         <div class="container-fluid">
             <div class="position-realtive">
-                <div class="position-absolute start-0 top-0" style="margin-left: 0.3rem;margin-top: 0.28rem;">
-                    <img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} class="img_xmas" src="{% static 'images/icons/hat.png' %}" alt="">
+                <div class="position-absolute start-0 top-0" style="margin-left: 0.5rem;margin-top: 0.1rem;">
+                    <img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} class="img_xmas" style="width: 25px;" src="{% static 'images/icons/hat.png' %}" alt="">
                 </div>
             </div>
-          <a class="navbar-brand me-auto" href="#">EventMode</a>
+          <a class="navbar-brand me-auto" href="#"><span><img class="pb-1" width="20px" src="{% static 'images/icons/logo.png' %}" alt=""></span> EventMode</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>

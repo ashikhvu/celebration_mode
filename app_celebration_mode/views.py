@@ -35,11 +35,11 @@ def userlogin(request):
                     # elif user_data.is_superuser==False and user_data.is_staff==True:
                     #     auth.login(request,user_data)
                     #     messages.success(request,f'Welcome Doctor {username} ')
-                    #     return redirect('doctor_profile',pk=user_data.id)
+                    #     return redirect('user1_profile',pk=user_data.id)
                     # elif user_data.is_superuser==False and user_data.is_staff==False:
                     #     auth.login(request,user_data)
                     #     messages.success(request,f'Welcome patient {username} ')
-                    #     return redirect('patient_profile',pk=user_data.id)
+                    #     return redirect('user2_profile',pk=user_data.id)
                 else:
                     messages.error(request,"Invalid login credentials")
                     return redirect('signin_page')
