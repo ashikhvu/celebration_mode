@@ -15,6 +15,13 @@
             height: 0rem;
         }
     }
+    html,body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
 </style>
 <div>
     <!-- home page start -->
@@ -22,7 +29,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="card text-bg-dark" style="border-radius:0;border: none;">
-                    <img {% if current_theme.theme_name.id == 2 %}  %} src="{% static 'images/bg/bg2(7600x2400).jpg' %}" {% else %} src="{% static 'images/bg/bg_carousel1.jpg' %}" {% endif %} class="card-img" style="height: 31.5vw;"
+                    <img {% if current_theme.theme_name.id == 3 %} src="{% static 'images/onam/bg/bg1.png' %}"   {% elif current_theme.theme_name.id == 1 %}  src="{% static 'images/bg/bg_carousel1.jpg' %}" {% elif current_theme.theme_name.id == 2  %} src="{% static 'images/bg/bg2(7600x2400).jpg' %}" {% endif %} class="card-img" style="height: 31.5vw;"
                         alt="...">
                     <div class="card-img-overlay text-center" style="display: flex;align-items: center;">
                         <div>
@@ -135,7 +142,7 @@
     <!-- lights start -->
     <div class="position-relative" style="z-index: 10;">
         <div id="wire_sm" style="margin-top: 3.8rem;" class="position-absolute start-0 top-0">
-            <ul {% if current_theme.theme_name.id == 2 %} style="display: none;" {% endif %} class="wire">
+            <ul {% if current_theme.theme_name.id != 1 %} style="display: none;" {% endif %} class="wire">
 
             </ul>
         </div>
@@ -192,7 +199,7 @@
            
         </div> -->
         <div style="background-color: rgb(255, 255, 255);" class="row bg-gradient p-3 m-0 position-relative">
-            <div  {% if current_theme.theme_name.id == 2 %} style="display: none;"{% elif current_theme.theme_name.id == 1 %} class="pt-5" {% endif %}>
+            <div  {% if current_theme.theme_name.id == 1 %} class="pt-5" {% else %} style="display: none;" {% endif %}>
                 <div style="margin-left: 25vw;" class="position-absolute top-0 start-0 w-100 translate-middle-x">
                     <img width="50%" src="{% static 'images/decor/decor_top.png' %}" alt="">
                 </div>
@@ -209,7 +216,12 @@
                 <div class="justify-content-center" style="display: flex;align-items: center;height: 100%;">
                     <div class="position-reletive">
                         <div style="margin-top: -7rem;" class="position-absolute">
-                            <img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} width="201vw"  src="{% static 'images/decor/light2.png' %}" alt="">
+                            <img {% if current_theme.theme_name.id == 1 %} src="{% static 'images/decor/light2.png' %}" {% else %} style="visibility: hidden;" {% endif %} width="201vw"   alt="">
+                        </div>
+                    </div>
+                    <div class="position-reletive">
+                        <div style="margin-top: -7rem;" class="position-absolute">
+                            <img {% if current_theme.theme_name.id == 3 %} src="{% static 'images/onam/decor/frame_onam_image_no_bg.png' %}" {% else %} style="visibility: hidden;" {% endif %} width="420vw" height="450vh" style="margin-top: -7.2rem;margin-left: -6.2rem;"  alt="">
                         </div>
                     </div>
                     <img class="card_shadow1" style="border-radius: 5px;" width="200vw"
@@ -217,7 +229,7 @@
                 </div>
             </div>
             
-            <div class="col-sm-12 {% if current_theme.theme_name.id == 2 %} col-xl-6 {% else %} col-xl-4 {% endif %} pt-2 pb-2 ">
+            <div class="col-sm-12 {% if current_theme.theme_name.id != 2 %} col-xl-4 {% else %} col-xl-6 {% endif %} pt-2 pb-2 ">
                 <hr>
                 <h1>About Us</h1>
                 <p>There's this notion that to grow a business, you have to be ruthless. But we know there's a better way to grow. One where what's good for the bottom line is also good for customers. We believe businesses can grow with a conscience, and succeed with a soul — and that they can do it with inbound. 
@@ -229,9 +241,12 @@
                 <hr>
             </div>
             
-            <div class="col-sm-12 col-xl-3  ">
+            <div class="col-sm-12 col-xl-3  position-realtive">
+                <div style="margin-right: -4.5rem;margin-bottom: rem;" class="position-absolute end-0 bottom-0">
+                    <img {% if current_theme.theme_name.id != 3 %} style="visibility: hidden;" {% endif %} width="150vw" style="margin-right: 4.8rem;margin-bottom: 2.5rem;" src="{% static 'images/onam/decor/decor_frame_side1.png' %}" alt="">
+                </div>
                 <div class="justify-content-center" style="display: flex;align-items: center;height: 100%;">
-                    <img {% if current_theme.theme_name.id == 2 %} style="display: none;" {% endif %} width="80%" src="{% static 'images/decor/xmas_papa.gif' %}" alt="no image">
+                    <img {% if current_theme.theme_name.id == 2 %} style="display: none;" {% elif current_theme.theme_name.id == 1 %} width="80%"  src="{% static 'images/decor/xmas_papa.gif' %}" {% elif current_theme.theme_name.id == 3 %} src="{% static 'images/onam/maveli.gif' %}" width="100%"  {% endif %} alt="no image">
                 </div>
             </div>
 
@@ -241,13 +256,13 @@
         </div>
         <div style="background-color: wheat;" class="row bg-gradient  m-0">
             <div class="col-sm-12 col-xl-4 pt-2 pb-2">
-                <div  style=" background-image: url('{% if current_theme.theme_name.id == 1 %}/static/images/decor/tree_snow.png{% endif %}');background-size: contain;background-repeat: no-repeat;">
+                <div  style=" background-image: url('{% if current_theme.theme_name.id == 1 %}/static/images/decor/tree_snow.png{% elif current_theme.theme_name.id == 3 %}/static/images/onam/decor/onam_sadya-no_bg.png{% endif %}');background-size: contain;background-repeat: no-repeat;">
                     <div class="row">
                         <div class="col-sm-12 col-xl-2"></div>
-                        <div class="col-sm-12 col-xl-2">
+                        <div class="col-sm-12 col-xl-2"style="background-image: radial-gradient(wheat,rgba(245, 222, 179, 0),rgba(245, 222, 179, 0));">
                             <h1 class="ts_sm_dark text-warning text- ps-3">01</h1>
                         </div>
-                        <div class="col-sm-12 col-xl-6"style="background-image: radial-gradient(wheat,wheat,wheat,rgba(245, 222, 179, 0.521),rgba(245, 222, 179, 0));">
+                        <div class="col-sm-12 col-xl-6"style="background-image: radial-gradient(wheat,wheat,wheat,rgba(245, 222, 179, 0),rgba(245, 222, 179, 0));">
                             <h3 class="p-3 text- fw-bold">Market Hub
                             </h4>
                         </div>
@@ -255,8 +270,8 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-xl-2"></div>
-                        <div class="col-sm-12 col-xl-8" style="background-image: radial-gradient(wheat,wheat,wheat,rgba(245, 222, 179, 0.521),rgba(245, 222, 179, 0));">
-                            <p class="text-start ps-3 pe-3">Our marketing software has everything you need to run a successful inbound marketing strategy that grows traffic, converts leads, and shows ROI.
+                        <div class="col-sm-12 col-xl-8" style="background-image: radial-gradient(wheat,wheat,wheat,rgba(245, 222, 179, 0),rgba(245, 222, 179, 0));">
+                            <p style="text-shadow: 2px 2px 5px wheat;" class="text-start ps-3 pe-3">Our marketing software has everything you need to run a successful inbound marketing strategy that grows traffic, converts leads, and shows ROI.
 
                             </p>
                         </div>
@@ -315,7 +330,7 @@
 
 <div class="position-relative" style="z-index: 10;">
     <div id="wire_sm" style="margin-top:3.8rem;" class="position-absolute start-0 top-0"  {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %}>
-        <ul {% if current_theme.theme_name.id == 2 %} style="display: none;" {% endif %} class="wire">
+        <ul {% if current_theme.theme_name.id != 1 %} style="display: none;" {% endif %} class="wire">
 
         </ul>
     </div>
@@ -334,13 +349,17 @@
 
     <div id="about_" class="w-100">
         <div style="background-color: rgb(255, 255, 255);" class="row text-center p-3 bg- m-0">
+            <!-- <div class="position-reletive">
+                
+            </div> -->
             <div class="col-sm-12  col-md-4 col-lg-4 col-xl-3 border p-4">
-                <div class="position-reletive">
-                    <div style="margin-top: 12rem;" class="position-absolute">
-                        <img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} width="201vw"  src="{% static 'images/decor/light2.png' %}" alt="">
+                <div class="justify-content-center position-relative">
+                    <div style="margin-right: -5rem;margin-bottom: -2rem;" class="position-absolute end-0 bottom-0">
+                        <img {% if current_theme.theme_name.id != 3 %} style="visibility: hidden;" {% endif %} width="120vw" style="margin-right: 4.5rem;margin-bottom: 2.5rem;" src="{% static 'images/onam/decor/maveli2-no_bg.png' %}" alt="">
                     </div>
-                </div>
-                <div class="justify-content-center">
+                    <div style="margin-right: -5rem;margin-bottom: -2rem;" class="position-absolute end-0 bottom-0">
+                        <img {% if current_theme.theme_name.id != 1 %} style="visibility: hidden;" {% endif %} width="150vw"  src="{% static 'images/decor/xmaspap_peek.png' %}" alt="">
+                    </div>
                     <div class="row  border border-dark rounded card_shadow">
                         <div class="col-sm-7 p-2">
                             <div class="text-start">
@@ -360,12 +379,13 @@
                 </div>
             </div>
             <div class="col-sm-12  col-md-4 col-lg-4 col-xl-3 border p-4">
-                <div class="position-reletive">
-                    <div style="margin-top: 12rem;" class="position-absolute">
-                        <img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} width="201vw"  src="{% static 'images/decor/light2.png' %}" alt="">
+                <div class="justify-content-center position-relative">
+                    <div style="margin-right: -5rem;margin-bottom: -2rem;" class="position-absolute end-0 bottom-0">
+                        <img {% if current_theme.theme_name.id != 3 %} style="visibility: hidden;" {% endif %} width="150vw" style="margin-right: 4.8rem;margin-bottom: 2.5rem;" src="{% static 'images/onam/decor/puli-no_bg.png' %}" alt="">
                     </div>
-                </div>
-                <div class="justify-content-center">
+                    <div style="margin-right: -1rem;margin-bottom: 0.5rem;" class="position-absolute end-0 bottom-0">
+                        <img {% if current_theme.theme_name.id != 1 %} style="visibility: hidden;" {% endif %} width="150vw"  src="{% static 'images/decor/xmas_elf_no_bg.png' %}" alt="">
+                    </div>
                     <div class="row  border border-dark rounded card_shadow">
                         <div class="col-sm-7 p-2">
                             <div class="text-start">
@@ -385,12 +405,13 @@
                 </div>
             </div>
             <div class="col-sm-12  col-md-4 col-lg-4 col-xl-3 border p-4">
-                <div class="position-reletive">
-                    <div style="margin-top: 12rem;" class="position-absolute">
-                        <img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} width="201vw"  src="{% static 'images/decor/light2.png' %}" alt="">
+                <div class="justify-content-center position-relative">
+                    <div style="margin-right: -5rem;margin-bottom: -2rem;" class="position-absolute end-0 bottom-0">
+                        <img {% if current_theme.theme_name.id != 3 %} style="visibility: hidden;" {% endif %} width="150vw" style="margin-right: 4.8rem;margin-bottom: 2.5rem;" src="{% static 'images/onam/decor/Vaman-Vishnu-no_bg.png' %}" alt="">
                     </div>
-                </div>
-                <div class="justify-content-center">
+                    <div style="margin-right:0em;margin-bottom: rem;" class="position-absolute end-0 bottom-0">
+                        <img {% if current_theme.theme_name.id != 1 %} style="visibility: hidden;" {% endif %} width="130vw"  src="{% static 'images/decor/xams_deer2.png' %}" alt="">
+                    </div>
                     <div class="row  border border-dark rounded card_shadow">
                         <div class="col-sm-7 p-2">
                             <div class="text-start">
@@ -410,12 +431,13 @@
                 </div>
             </div>
             <div class="col-sm-12  col-md-4 col-lg-4 col-xl-3 border p-4">
-                <div class="position-reletive">
-                    <div style="margin-top: 12rem;" class="position-absolute">
-                        <img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %} width="201vw"  src="{% static 'images/decor/light2.png' %}" alt="">
+                <div class="justify-content-center position-relative">
+                    <div style="margin-right: -5rem;margin-bottom: -2rem;" class="position-absolute end-0 bottom-0">
+                        <img {% if current_theme.theme_name.id != 3 %} style="visibility: hidden;" {% endif %} width="150vw" style="margin-right: 4.8rem;margin-bottom: 2.5rem;" src="{% static 'images/onam/decor/mohinyattam_no_bg.png' %}" alt="">
                     </div>
-                </div>
-                <div class="justify-content-center">
+                    <div style="margin-right: -0.6rem;margin-bottom: rem;" class="position-absolute end-0 bottom-0">
+                        <img {% if current_theme.theme_name.id != 1 %} style="visibility: hidden;" {% endif %} width="90vw"  src="{% static 'images/decor/xams_snoman_peek_no_bg_mirror.png' %}" alt="">
+                    </div>
                     <div class="row  border border-dark rounded card_shadow">
                         <div class="col-sm-7 p-2">
                             <div class="text-start">
@@ -446,7 +468,7 @@
     <!-- lights start -->
     <div class="position-relative" style="z-index: 10;">
         <div id="wire_sm" style="margin-top:3rem;" class="position-absolute start-0 top-0"  {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %}>
-            <ul {% if current_theme.theme_name.id == 2 %} style="display: none;" {% endif %} class="wire">
+            <ul {% if current_theme.theme_name.id != 1 %} style="display: none;" {% endif %} class="wire">
 
             </ul>
         </div>
@@ -469,7 +491,10 @@
             <div class="col-sm-12 col-xl-4 p-3 theme-border"  style="z-index: 10;">
                 <div class="position-relative" style="z-index: 2;">
                     <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute end-0">
-                        <span><img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                        <span><img {% if current_theme.theme_name.id != 1 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                    </div>
+                    <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute start-0">
+                        <span><img {% if current_theme.theme_name.id != 3 %} style="visibility: hidden;" {% endif %}  width="150vw" style="transform: rotate(60deg)" src="{% static 'images/onam/decor/jasmin_no_bg1.png' %}" alt=""></span>
                     </div>
                 </div>
                 <div class="card text-light card_shadow1">
@@ -490,7 +515,10 @@
             <div class="col-sm-12 col-xl-4 p-3 theme-border">
                 <div class="position-relative" style="z-index: 2;">
                     <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute end-0">
-                        <span><img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                        <span><img {% if current_theme.theme_name.id != 1 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                    </div>
+                    <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute start-0">
+                        <span><img {% if current_theme.theme_name.id != 3 %} style="visibility: hidden;" {% endif %}  width="150vw" style="transform: rotate(60deg)" src="{% static 'images/onam/decor/jasmin_no_bg1.png' %}" alt=""></span>
                     </div>
                 </div>
                 <div class="card text-light card_shadow1">
@@ -510,8 +538,11 @@
             </div>
             <div class="col-sm-12 col-xl-4 mx-auto p-3 theme-border">
                 <div class="position-relative" style="z-index: 2;">
-                    <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute end-0">
-                        <span><img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                    <<div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute end-0">
+                        <span><img {% if current_theme.theme_name.id != 1 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                    </div>
+                    <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute start-0">
+                        <span><img {% if current_theme.theme_name.id != 3 %} style="visibility: hidden;" {% endif %}  width="150vw" style="transform: rotate(60deg)" src="{% static 'images/onam/decor/jasmin_no_bg1.png' %}" alt=""></span>
                     </div>
                 </div>
                 <div class="card text-light card_shadow1">
@@ -532,7 +563,10 @@
             <div class="col-sm-12 col-xl-4 p-3 theme-border">
                 <div class="position-relative" style="z-index: 2;">
                     <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute end-0">
-                        <span><img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                        <span><img {% if current_theme.theme_name.id != 1 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                    </div>
+                    <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute start-0">
+                        <span><img {% if current_theme.theme_name.id != 3 %} style="visibility: hidden;" {% endif %}  width="150vw" style="transform: rotate(60deg)" src="{% static 'images/onam/decor/jasmin_no_bg1.png' %}" alt=""></span>
                     </div>
                 </div>
                 <div class="card text-light card_shadow1">
@@ -553,7 +587,10 @@
             <div class="col-sm-12 col-xl-4 p-3 theme-border">
                 <div class="position-relative" style="z-index: 2;">
                     <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute end-0">
-                        <span><img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                        <span><img {% if current_theme.theme_name.id != 1 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                    </div>
+                    <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute start-0">
+                        <span><img {% if current_theme.theme_name.id != 3 %} style="visibility: hidden;" {% endif %}  width="150vw" style="transform: rotate(60deg)" src="{% static 'images/onam/decor/jasmin_no_bg1.png' %}" alt=""></span>
                     </div>
                 </div>
                 <div class="card text-light card_shadow1">
@@ -574,7 +611,10 @@
             <div class="col-sm-12 col-xl-4 p-3 theme-border mx-auto">
                 <div class="position-relative" style="z-index: 2;">
                     <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute end-0">
-                        <span><img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                        <span><img {% if current_theme.theme_name.id != 1 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                    </div>
+                    <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute start-0">
+                        <span><img {% if current_theme.theme_name.id != 3 %} style="visibility: hidden;" {% endif %}  width="150vw" style="transform: rotate(60deg)" src="{% static 'images/onam/decor/jasmin_no_bg1.png' %}" alt=""></span>
                     </div>
                 </div>
                 <div class="card text-light card_shadow1">
@@ -595,7 +635,10 @@
             <div class="col-sm-12 col-xl-4 p-3 theme-border">
                 <div class="position-relative" style="z-index: 2;">
                     <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute end-0">
-                        <span><img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                        <span><img {% if current_theme.theme_name.id != 1 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                    </div>
+                    <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute start-0">
+                        <span><img {% if current_theme.theme_name.id != 3 %} style="visibility: hidden;" {% endif %}  width="150vw" style="transform: rotate(60deg)" src="{% static 'images/onam/decor/jasmin_no_bg1.png' %}" alt=""></span>
                     </div>
                 </div>
                 <div class="card text-light card_shadow1">
@@ -616,7 +659,10 @@
             <div class="col-sm-12 col-xl-4 p-3 theme-border">
                 <div class="position-relative" style="z-index: 2;">
                     <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute end-0">
-                        <span><img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                        <span><img {% if current_theme.theme_name.id != 1 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                    </div>
+                    <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute start-0">
+                        <span><img {% if current_theme.theme_name.id != 3 %} style="visibility: hidden;" {% endif %}  width="150vw" style="transform: rotate(60deg)" src="{% static 'images/onam/decor/jasmin_no_bg1.png' %}" alt=""></span>
                     </div>
                 </div>
                 <div class="card text-light card_shadow1">
@@ -637,7 +683,10 @@
             <div class="col-sm-12 col-xl-4 p-3 theme-border mx-auto">
                 <div class="position-relative" style="z-index: 2;">
                     <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute end-0">
-                        <span><img {% if current_theme.theme_name.id == 2 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                        <span><img {% if current_theme.theme_name.id != 1 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
+                    </div>
+                    <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute start-0">
+                        <span><img {% if current_theme.theme_name.id != 3 %} style="visibility: hidden;" {% endif %}  width="150vw" style="transform: rotate(60deg)" src="{% static 'images/onam/decor/jasmin_no_bg1.png' %}" alt=""></span>
                     </div>
                 </div>
                 <div class="card text-light card_shadow1">
@@ -665,7 +714,7 @@
 
     <div class="position-relative" style="z-index: 10;">
         <div id="wire_sm" style="margin-top:2.8rem;" class="position-absolute start-0 top-0" >
-            <ul  {% if current_theme.theme_name.id == 2 %} style="display: none;" {% endif %} class="wire">
+            <ul  {% if current_theme.theme_name.id != 1 %} style="display: none;" {% endif %} class="wire">
 
             </ul>
         </div>
@@ -818,7 +867,7 @@
         $('.theme-border').css({'border': 'none',
                                 'border-radius':'10px'})
     }
-    else if(theme==2){
+    else if(theme!=1){
         // alert('default')
         $('.theme_btn').removeClass('btn-danger')
         $('.theme_btn').addClass('btn-primary')

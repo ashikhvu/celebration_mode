@@ -61,7 +61,7 @@ def change_event(request):
         set_theme.theme_name = events
         set_theme.save()
         print(f'\n{set_theme.theme_name.id}\n')
-    return redirect(admin_page)
+    return redirect(home)
 
 def logout_page(request):
     auth.logout(request)
