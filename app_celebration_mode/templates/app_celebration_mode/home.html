@@ -21,6 +21,7 @@
         margin: 0;
         padding: 0;
         overflow-x: hidden;
+        overflow-y: scroll;
     }
 </style>
 <div>
@@ -538,7 +539,7 @@
             </div>
             <div class="col-sm-12 col-xl-4 mx-auto p-3 theme-border">
                 <div class="position-relative" style="z-index: 2;">
-                    <<div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute end-0">
+                    <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute end-0">
                         <span><img {% if current_theme.theme_name.id != 1 %} style="visibility: hidden;" {% endif %}  width="100vw" src="{% static 'images/decor/ribbon1.png' %}" alt=""></span>
                     </div>
                     <div style="margin-top: -0.2rem;margin-right: -0.88rem;" class="position-absolute start-0">
