@@ -45,37 +45,37 @@
     <nav class="navbar navbar-expand-lg bg-light p-2 sticky-top ts_sm_light bs_md">
         <div class="container-fluid">
             <div class="position-realtive">
-                <div class="position-absolute start-0 top-0" style="margin-left: 0.3rem;margin-top: 0.28rem;">
-                    <img {% if current_theme.theme_name.id == 2 %} hidden {% endif %} class="img_xmas" src="{% static 'images/icons/hat.png' %}" alt="">
+                <div class="position-absolute start-0 top-0" style="margin-left: 0.7rem;margin-top: 0.2rem;">
+                    <img {% if current_theme.theme_name.id != 1 %} hidden {% endif %} class="img_xmas" src="{% static 'images/icons/hat.png' %}" alt="">
                 </div>
             </div>
-          <a class="navbar-brand me-auto" href="#">EventMode</a>
+          <a class="navbar-brand me-auto" href="#"><span><img class="pb-1" width="20px" src="{% static 'images/icons/logo.png' %}" alt=""></span> EventMode</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><span><img style="width: 18px;padding-bottom: 5px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/house_default1.png' %}" {% else %} src="{% static 'images/icons/house.png' %}" {% endif %} alt=""></span> Home</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><span><img style="width: 18px;padding-bottom: 5px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/house_default1.png' %}"{% elif current_theme.theme_name.id == 3 %} src="{% static 'images/onam/icons/onam_home.png' %}" {% else %} src="{% static 'images/icons/house.png' %}" {% endif %} alt=""></span> Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'home' %}"><span><img style="width: 18px;padding-bottom: 5px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/about_default4.png' %}" {% else %} src="{% static 'images/icons/candy-canes.png' %}" {% endif %} alt=""></span> About</a>
+                <a class="nav-link" href="{% url 'home' %}"><span><img style="width: 18px;padding-bottom: 5px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/about_default4.png' %}" {% elif current_theme.theme_name.id == 3 %} src="{% static 'images/onam/icons/onam_about.png' %}"{% else %} src="{% static 'images/icons/candy-canes.png' %}" {% endif %} alt=""></span> About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'home' %}"><span><img style="width: 18px;padding-bottom: 5px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/service_default8.png' %}" {% else %} src="{% static 'images/icons/tree.png' %}" {% endif %} alt=""></span> Services</a>
+                <a class="nav-link" href="{% url 'home' %}"><span><img style="width: 18px;padding-bottom: 5px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/service_default8.png' %}" {% elif current_theme.theme_name.id == 3 %} src="{% static 'images/onam/icons/onam_service.png' %}" {% else %} src="{% static 'images/icons/tree.png' %}" {% endif %} alt=""></span> Services</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'signin_page' %}"><span><img style="width: 18px;padding-bottom: 5px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/signin_default3.png' %}" {% else %} src="{% static 'images/icons/snow-globe.png' %}" {% endif %} alt=""></span> Signin</a>
+                <a class="nav-link" href="{% url 'home' %}"><span><img style="width: 18px;padding-bottom: 5px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/contacts_default2.png' %}" {% elif current_theme.theme_name.id == 3 %} src="{% static 'images/onam/icons/onam_contacts.png' %}"{% else %} src="{% static 'images/icons/letter.png' %}" {% endif %}  alt=""></span> Contacts</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'home' %}"><span><img style="width: 18px;padding-bottom: 5px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/contacts_default2.png' %}" {% else %} src="{% static 'images/icons/letter.png' %}" {% endif %}  alt=""></span> Contacts</a>
+                <a class="nav-link" href="{% url 'signin_page' %}"><span><img style="width: 18px;padding-bottom: 5px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/signin_default3.png' %}"{% elif current_theme.theme_name.id == 3 %} src="{% static 'images/onam/icons/onam_login.png' %}"  {% else %} src="{% static 'images/icons/snow-globe.png' %}" {% endif %} alt=""></span> Signin</a>
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'admin_page' %}"><span><img style="width: 18px;padding-bottom: 5px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/admin_default2.png' %}" {% else %} src="{% static 'images/icons/bisket.png' %}" {% endif %} alt=""></span> Admin</a>
+                <a class="nav-link" href="{% url 'admin_page' %}"><span><img style="width: 18px;padding-bottom: 5px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/admin_default2.png' %}" {% elif current_theme.theme_name.id == 3 %} src="{% static 'images/onam/icons/onam_admin.png' %}"{% else %} src="{% static 'images/icons/bisket.png' %}" {% endif %} alt=""></span> Admin</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout_page' %}"><span><img style="width: 18px;padding-bottom: 5px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/logout_default1.png' %}" {% else %}  src="{% static 'images/icons/penguin.png' %}"  {% endif %} alt=""></span> Logout</a>
+                <a class="nav-link" href="{% url 'logout_page' %}"><span><img style="width: 18px;padding-bottom: 5px;" {% if current_theme.theme_name.id == 2 %} src="{% static 'images/icons/default_icons/logout_default1.png' %}" {% elif current_theme.theme_name.id == 3 %} src="{% static 'images/onam/icons/onam_logout.png' %}"{% else %}  src="{% static 'images/icons/penguin.png' %}"  {% endif %} alt=""></span> Logout</a>
               </li>
               {% else %}
               {% endif %}
